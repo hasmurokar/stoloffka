@@ -29,61 +29,67 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.добавитьБлюдоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.adminMainForm_menu_addDish = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminMainForm_menu_addUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminMainForm_menu_dishList = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminMainForm_btn_exit = new System.Windows.Forms.Button();
+            this.adminMainForm_list_users = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.списокБлюдToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminMainForm_list_role = new System.Windows.Forms.ComboBox();
+            this.adminMainForm_btn_save = new System.Windows.Forms.Button();
+            this.adminMainForm_btn_delete = new System.Windows.Forms.Button();
+            this.adminMainForm_btn_changeInfo = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьБлюдоToolStripMenuItem,
-            this.добавитьПользователяToolStripMenuItem,
-            this.списокБлюдToolStripMenuItem});
+            this.adminMainForm_menu_addDish,
+            this.adminMainForm_menu_addUser,
+            this.adminMainForm_menu_dishList});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(753, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // добавитьБлюдоToolStripMenuItem
+            // adminMainForm_menu_addDish
             // 
-            this.добавитьБлюдоToolStripMenuItem.Name = "добавитьБлюдоToolStripMenuItem";
-            this.добавитьБлюдоToolStripMenuItem.Size = new System.Drawing.Size(137, 23);
-            this.добавитьБлюдоToolStripMenuItem.Text = "Добавить блюдо...";
+            this.adminMainForm_menu_addDish.Name = "adminMainForm_menu_addDish";
+            this.adminMainForm_menu_addDish.Size = new System.Drawing.Size(137, 23);
+            this.adminMainForm_menu_addDish.Text = "Добавить блюдо...";
             // 
-            // добавитьПользователяToolStripMenuItem
+            // adminMainForm_menu_addUser
             // 
-            this.добавитьПользователяToolStripMenuItem.Name = "добавитьПользователяToolStripMenuItem";
-            this.добавитьПользователяToolStripMenuItem.Size = new System.Drawing.Size(180, 23);
-            this.добавитьПользователяToolStripMenuItem.Text = "Добавить пользователя...";
+            this.adminMainForm_menu_addUser.Name = "adminMainForm_menu_addUser";
+            this.adminMainForm_menu_addUser.Size = new System.Drawing.Size(180, 23);
+            this.adminMainForm_menu_addUser.Text = "Добавить пользователя...";
             // 
-            // button3
+            // adminMainForm_menu_dishList
             // 
-            this.button3.BackColor = System.Drawing.Color.RosyBrown;
-            this.button3.Location = new System.Drawing.Point(600, 224);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 30);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Выйти из аккаунта";
-            this.button3.UseVisualStyleBackColor = false;
+            this.adminMainForm_menu_dishList.Name = "adminMainForm_menu_dishList";
+            this.adminMainForm_menu_dishList.Size = new System.Drawing.Size(105, 23);
+            this.adminMainForm_menu_dishList.Text = "Список блюд";
             // 
-            // comboBox1
+            // adminMainForm_btn_exit
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(44, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(285, 27);
-            this.comboBox1.TabIndex = 6;
+            this.adminMainForm_btn_exit.BackColor = System.Drawing.Color.RosyBrown;
+            this.adminMainForm_btn_exit.Location = new System.Drawing.Point(600, 224);
+            this.adminMainForm_btn_exit.Name = "adminMainForm_btn_exit";
+            this.adminMainForm_btn_exit.Size = new System.Drawing.Size(143, 30);
+            this.adminMainForm_btn_exit.TabIndex = 5;
+            this.adminMainForm_btn_exit.Text = "Выйти из аккаунта";
+            this.adminMainForm_btn_exit.UseVisualStyleBackColor = false;
+            // 
+            // adminMainForm_list_users
+            // 
+            this.adminMainForm_list_users.FormattingEnabled = true;
+            this.adminMainForm_list_users.Location = new System.Drawing.Point(44, 84);
+            this.adminMainForm_list_users.Name = "adminMainForm_list_users";
+            this.adminMainForm_list_users.Size = new System.Drawing.Size(285, 27);
+            this.adminMainForm_list_users.TabIndex = 6;
             // 
             // label1
             // 
@@ -103,64 +109,58 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Назначить роль:";
             // 
-            // comboBox2
+            // adminMainForm_list_role
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(44, 163);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(285, 27);
-            this.comboBox2.TabIndex = 9;
+            this.adminMainForm_list_role.FormattingEnabled = true;
+            this.adminMainForm_list_role.Location = new System.Drawing.Point(44, 163);
+            this.adminMainForm_list_role.Name = "adminMainForm_list_role";
+            this.adminMainForm_list_role.Size = new System.Drawing.Size(285, 27);
+            this.adminMainForm_list_role.TabIndex = 9;
             // 
-            // button1
+            // adminMainForm_btn_save
             // 
-            this.button1.Location = new System.Drawing.Point(480, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 26);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.adminMainForm_btn_save.Location = new System.Drawing.Point(480, 83);
+            this.adminMainForm_btn_save.Name = "adminMainForm_btn_save";
+            this.adminMainForm_btn_save.Size = new System.Drawing.Size(97, 26);
+            this.adminMainForm_btn_save.TabIndex = 10;
+            this.adminMainForm_btn_save.Text = "Сохранить";
+            this.adminMainForm_btn_save.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // adminMainForm_btn_delete
             // 
-            this.button2.Location = new System.Drawing.Point(480, 148);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 26);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Удалить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.adminMainForm_btn_delete.Location = new System.Drawing.Point(480, 148);
+            this.adminMainForm_btn_delete.Name = "adminMainForm_btn_delete";
+            this.adminMainForm_btn_delete.Size = new System.Drawing.Size(97, 26);
+            this.adminMainForm_btn_delete.TabIndex = 11;
+            this.adminMainForm_btn_delete.Text = "Удалить";
+            this.adminMainForm_btn_delete.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // adminMainForm_btn_changeInfo
             // 
-            this.button4.Location = new System.Drawing.Point(422, 115);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(202, 27);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Изменить информацию";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // списокБлюдToolStripMenuItem
-            // 
-            this.списокБлюдToolStripMenuItem.Name = "списокБлюдToolStripMenuItem";
-            this.списокБлюдToolStripMenuItem.Size = new System.Drawing.Size(105, 23);
-            this.списокБлюдToolStripMenuItem.Text = "Список блюд";
+            this.adminMainForm_btn_changeInfo.Location = new System.Drawing.Point(422, 115);
+            this.adminMainForm_btn_changeInfo.Name = "adminMainForm_btn_changeInfo";
+            this.adminMainForm_btn_changeInfo.Size = new System.Drawing.Size(202, 27);
+            this.adminMainForm_btn_changeInfo.TabIndex = 12;
+            this.adminMainForm_btn_changeInfo.Text = "Изменить информацию";
+            this.adminMainForm_btn_changeInfo.UseVisualStyleBackColor = true;
             // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 262);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.adminMainForm_btn_changeInfo);
+            this.Controls.Add(this.adminMainForm_btn_delete);
+            this.Controls.Add(this.adminMainForm_btn_save);
+            this.Controls.Add(this.adminMainForm_list_role);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.adminMainForm_list_users);
+            this.Controls.Add(this.adminMainForm_btn_exit);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminMainForm";
-            this.Text = "AdminMainForm";
+            this.Text = "Форма администратора";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -171,16 +171,16 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem добавитьБлюдоToolStripMenuItem;
-        private ToolStripMenuItem добавитьПользователяToolStripMenuItem;
-        private Button button3;
-        private ComboBox comboBox1;
+        private ToolStripMenuItem adminMainForm_menu_addDish;
+        private ToolStripMenuItem adminMainForm_menu_addUser;
+        private Button adminMainForm_btn_exit;
+        private ComboBox adminMainForm_list_users;
         private Label label1;
         private Label label2;
-        private ComboBox comboBox2;
-        private Button button1;
-        private Button button2;
-        private Button button4;
-        private ToolStripMenuItem списокБлюдToolStripMenuItem;
+        private ComboBox adminMainForm_list_role;
+        private Button adminMainForm_btn_save;
+        private Button adminMainForm_btn_delete;
+        private Button adminMainForm_btn_changeInfo;
+        private ToolStripMenuItem adminMainForm_menu_dishList;
     }
 }

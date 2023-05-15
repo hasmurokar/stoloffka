@@ -28,31 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cashierMainForm_pickDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cashierMainForm_list_dish = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.cashierMainForm_btn_addDish = new System.Windows.Forms.Button();
+            this.cashierMainForm_diahCount = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label_fio = new System.Windows.Forms.Label();
+            this.label_orderNumber = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.cashierMainForm_btn_setOrder = new System.Windows.Forms.Button();
+            this.cashierMainForm_btn_print = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.cashierMainForm_btn_exit = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.cashierMainForm_diahCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // cashierMainForm_pickDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(47, 100);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 0;
+            this.cashierMainForm_pickDate.Location = new System.Drawing.Point(47, 100);
+            this.cashierMainForm_pickDate.Name = "cashierMainForm_pickDate";
+            this.cashierMainForm_pickDate.Size = new System.Drawing.Size(200, 26);
+            this.cashierMainForm_pickDate.TabIndex = 0;
             // 
             // label1
             // 
@@ -73,13 +75,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Дата";
             // 
-            // comboBox1
+            // cashierMainForm_list_dish
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(47, 210);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 27);
-            this.comboBox1.TabIndex = 3;
+            this.cashierMainForm_list_dish.FormattingEnabled = true;
+            this.cashierMainForm_list_dish.Location = new System.Drawing.Point(47, 210);
+            this.cashierMainForm_list_dish.Name = "cashierMainForm_list_dish";
+            this.cashierMainForm_list_dish.Size = new System.Drawing.Size(200, 27);
+            this.cashierMainForm_list_dish.TabIndex = 3;
             // 
             // label3
             // 
@@ -90,21 +92,36 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Выбрать блюдо";
             // 
-            // button1
+            // cashierMainForm_btn_addDish
             // 
-            this.button1.Location = new System.Drawing.Point(84, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 30);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cashierMainForm_btn_addDish.Location = new System.Drawing.Point(84, 310);
+            this.cashierMainForm_btn_addDish.Name = "cashierMainForm_btn_addDish";
+            this.cashierMainForm_btn_addDish.Size = new System.Drawing.Size(109, 30);
+            this.cashierMainForm_btn_addDish.TabIndex = 5;
+            this.cashierMainForm_btn_addDish.Text = "Добавить";
+            this.cashierMainForm_btn_addDish.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // cashierMainForm_diahCount
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(47, 278);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(200, 26);
-            this.numericUpDown1.TabIndex = 6;
+            this.cashierMainForm_diahCount.Location = new System.Drawing.Point(47, 278);
+            this.cashierMainForm_diahCount.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.cashierMainForm_diahCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.cashierMainForm_diahCount.Name = "cashierMainForm_diahCount";
+            this.cashierMainForm_diahCount.Size = new System.Drawing.Size(200, 26);
+            this.cashierMainForm_diahCount.TabIndex = 6;
+            this.cashierMainForm_diahCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
@@ -124,23 +141,23 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "ФИО кассира";
             // 
-            // label6
+            // label_fio
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(348, 106);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(273, 19);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "____________________________________________";
+            this.label_fio.AutoSize = true;
+            this.label_fio.Location = new System.Drawing.Point(348, 106);
+            this.label_fio.Name = "label_fio";
+            this.label_fio.Size = new System.Drawing.Size(273, 19);
+            this.label_fio.TabIndex = 9;
+            this.label_fio.Text = "____________________________________________";
             // 
-            // label7
+            // label_orderNumber
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(348, 238);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(273, 19);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "____________________________________________";
+            this.label_orderNumber.AutoSize = true;
+            this.label_orderNumber.Location = new System.Drawing.Point(348, 238);
+            this.label_orderNumber.Name = "label_orderNumber";
+            this.label_orderNumber.Size = new System.Drawing.Size(273, 19);
+            this.label_orderNumber.TabIndex = 11;
+            this.label_orderNumber.Text = "____________________________________________";
             // 
             // label8
             // 
@@ -160,47 +177,57 @@
             this.dataGridView1.Size = new System.Drawing.Size(443, 549);
             this.dataGridView1.TabIndex = 12;
             // 
-            // button2
+            // cashierMainForm_btn_setOrder
             // 
-            this.button2.Location = new System.Drawing.Point(188, 399);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(274, 39);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Оформить заказ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cashierMainForm_btn_setOrder.Location = new System.Drawing.Point(188, 399);
+            this.cashierMainForm_btn_setOrder.Name = "cashierMainForm_btn_setOrder";
+            this.cashierMainForm_btn_setOrder.Size = new System.Drawing.Size(274, 39);
+            this.cashierMainForm_btn_setOrder.TabIndex = 13;
+            this.cashierMainForm_btn_setOrder.Text = "Оформить заказ";
+            this.cashierMainForm_btn_setOrder.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // cashierMainForm_btn_print
             // 
-            this.button3.Location = new System.Drawing.Point(188, 456);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(274, 38);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Распечатать чек";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cashierMainForm_btn_print.Location = new System.Drawing.Point(188, 456);
+            this.cashierMainForm_btn_print.Name = "cashierMainForm_btn_print";
+            this.cashierMainForm_btn_print.Size = new System.Drawing.Size(274, 38);
+            this.cashierMainForm_btn_print.TabIndex = 14;
+            this.cashierMainForm_btn_print.Text = "Распечатать чек";
+            this.cashierMainForm_btn_print.UseVisualStyleBackColor = true;
+            // 
+            // cashierMainForm_btn_exit
+            // 
+            this.cashierMainForm_btn_exit.Location = new System.Drawing.Point(12, 577);
+            this.cashierMainForm_btn_exit.Name = "cashierMainForm_btn_exit";
+            this.cashierMainForm_btn_exit.Size = new System.Drawing.Size(111, 27);
+            this.cashierMainForm_btn_exit.TabIndex = 15;
+            this.cashierMainForm_btn_exit.Text = "Выход";
+            this.cashierMainForm_btn_exit.UseVisualStyleBackColor = true;
             // 
             // CashierMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 616);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cashierMainForm_btn_exit);
+            this.Controls.Add(this.cashierMainForm_btn_print);
+            this.Controls.Add(this.cashierMainForm_btn_setOrder);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label_orderNumber);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label_fio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cashierMainForm_diahCount);
+            this.Controls.Add(this.cashierMainForm_btn_addDish);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cashierMainForm_list_dish);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.cashierMainForm_pickDate);
             this.Name = "CashierMainForm";
-            this.Text = "CashierMainForm";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Text = "Форма кассира";
+            ((System.ComponentModel.ISupportInitialize)(this.cashierMainForm_diahCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,20 +236,22 @@
 
         #endregion
 
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker cashierMainForm_pickDate;
         private Label label1;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox cashierMainForm_list_dish;
         private Label label3;
-        private Button button1;
-        private NumericUpDown numericUpDown1;
+        private Button cashierMainForm_btn_addDish;
+        private NumericUpDown cashierMainForm_diahCount;
         private Label label4;
         private Label label5;
-        private Label label6;
-        private Label label7;
+        private Label label_fio;
+        private Label label_orderNumber;
         private Label label8;
         private DataGridView dataGridView1;
-        private Button button2;
-        private Button button3;
+        private Button cashierMainForm_btn_setOrder;
+        private Button cashierMainForm_btn_print;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private Button cashierMainForm_btn_exit;
     }
 }

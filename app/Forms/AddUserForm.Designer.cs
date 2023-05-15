@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.addUserForm_btn_back = new System.Windows.Forms.Button();
+            this.addUserForm_input_fio = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.addUserForm_input_login = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.addUserForm_input_password = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.addUserForm_list_role = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.addUserForm_birthday = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.addUserForm_input_phone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -50,21 +54,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Добавление пользователя";
             // 
-            // button1
+            // addUserForm_btn_back
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 27);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addUserForm_btn_back.Location = new System.Drawing.Point(12, 12);
+            this.addUserForm_btn_back.Name = "addUserForm_btn_back";
+            this.addUserForm_btn_back.Size = new System.Drawing.Size(81, 27);
+            this.addUserForm_btn_back.TabIndex = 1;
+            this.addUserForm_btn_back.Text = "Назад";
+            this.addUserForm_btn_back.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // addUserForm_input_fio
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(515, 26);
-            this.textBox1.TabIndex = 2;
+            this.addUserForm_input_fio.Location = new System.Drawing.Point(12, 107);
+            this.addUserForm_input_fio.Name = "addUserForm_input_fio";
+            this.addUserForm_input_fio.Size = new System.Drawing.Size(515, 26);
+            this.addUserForm_input_fio.TabIndex = 2;
             // 
             // label2
             // 
@@ -84,12 +88,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Введите логин:";
             // 
-            // textBox2
+            // addUserForm_input_login
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 175);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(334, 26);
-            this.textBox2.TabIndex = 5;
+            this.addUserForm_input_login.Location = new System.Drawing.Point(12, 175);
+            this.addUserForm_input_login.Name = "addUserForm_input_login";
+            this.addUserForm_input_login.Size = new System.Drawing.Size(334, 26);
+            this.addUserForm_input_login.TabIndex = 5;
             // 
             // label4
             // 
@@ -100,12 +104,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Введите пароль:";
             // 
-            // textBox3
+            // addUserForm_input_password
             // 
-            this.textBox3.Location = new System.Drawing.Point(15, 247);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(331, 26);
-            this.textBox3.TabIndex = 7;
+            this.addUserForm_input_password.Location = new System.Drawing.Point(15, 247);
+            this.addUserForm_input_password.Name = "addUserForm_input_password";
+            this.addUserForm_input_password.Size = new System.Drawing.Size(331, 26);
+            this.addUserForm_input_password.TabIndex = 7;
             // 
             // label5
             // 
@@ -116,13 +120,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Выберите роль пользователю:";
             // 
-            // comboBox1
+            // addUserForm_list_role
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 322);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 27);
-            this.comboBox1.TabIndex = 9;
+            this.addUserForm_list_role.FormattingEnabled = true;
+            this.addUserForm_list_role.Location = new System.Drawing.Point(15, 322);
+            this.addUserForm_list_role.Name = "addUserForm_list_role";
+            this.addUserForm_list_role.Size = new System.Drawing.Size(201, 27);
+            this.addUserForm_list_role.TabIndex = 9;
             // 
             // button2
             // 
@@ -133,24 +137,60 @@
             this.button2.Text = "Добавить";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // addUserForm_birthday
+            // 
+            this.addUserForm_birthday.Location = new System.Drawing.Point(454, 175);
+            this.addUserForm_birthday.Name = "addUserForm_birthday";
+            this.addUserForm_birthday.Size = new System.Drawing.Size(200, 26);
+            this.addUserForm_birthday.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(464, 153);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(163, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Введите дату рождения:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(464, 225);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(172, 19);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Введите номер телефона:";
+            // 
+            // addUserForm_input_phone
+            // 
+            this.addUserForm_input_phone.Location = new System.Drawing.Point(454, 247);
+            this.addUserForm_input_phone.Name = "addUserForm_input_phone";
+            this.addUserForm_input_phone.Size = new System.Drawing.Size(200, 26);
+            this.addUserForm_input_phone.TabIndex = 14;
+            // 
             // AddUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 491);
+            this.Controls.Add(this.addUserForm_input_phone);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.addUserForm_birthday);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.addUserForm_list_role);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.addUserForm_input_password);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.addUserForm_input_login);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addUserForm_input_fio);
+            this.Controls.Add(this.addUserForm_btn_back);
             this.Controls.Add(this.label1);
             this.Name = "AddUserForm";
-            this.Text = "AddUserForm";
+            this.Text = "Форма добавления пользователя";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,15 +199,19 @@
         #endregion
 
         private Label label1;
-        private Button button1;
-        private TextBox textBox1;
+        private Button addUserForm_btn_back;
+        private TextBox addUserForm_input_fio;
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox addUserForm_input_login;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox addUserForm_input_password;
         private Label label5;
-        private ComboBox comboBox1;
+        private ComboBox addUserForm_list_role;
         private Button button2;
+        private DateTimePicker addUserForm_birthday;
+        private Label label6;
+        private Label label7;
+        private TextBox addUserForm_input_phone;
     }
 }
