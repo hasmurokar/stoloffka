@@ -38,7 +38,7 @@
             this.addUserForm_input_password = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.addUserForm_list_role = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addUserForm_btn_addUser = new System.Windows.Forms.Button();
             this.addUserForm_birthday = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -123,19 +123,24 @@
             // addUserForm_list_role
             // 
             this.addUserForm_list_role.FormattingEnabled = true;
+            this.addUserForm_list_role.Items.AddRange(new object[] {
+            "Администратор",
+            "Повар",
+            "Кассир"});
             this.addUserForm_list_role.Location = new System.Drawing.Point(15, 322);
             this.addUserForm_list_role.Name = "addUserForm_list_role";
             this.addUserForm_list_role.Size = new System.Drawing.Size(201, 27);
             this.addUserForm_list_role.TabIndex = 9;
             // 
-            // button2
+            // addUserForm_btn_addUser
             // 
-            this.button2.Location = new System.Drawing.Point(323, 432);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 31);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Добавить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addUserForm_btn_addUser.Location = new System.Drawing.Point(323, 432);
+            this.addUserForm_btn_addUser.Name = "addUserForm_btn_addUser";
+            this.addUserForm_btn_addUser.Size = new System.Drawing.Size(145, 31);
+            this.addUserForm_btn_addUser.TabIndex = 10;
+            this.addUserForm_btn_addUser.Text = "Добавить";
+            this.addUserForm_btn_addUser.UseVisualStyleBackColor = true;
+            this.addUserForm_btn_addUser.Click += new System.EventHandler(this.addUserForm_btn_addUser_Click);
             // 
             // addUserForm_birthday
             // 
@@ -178,7 +183,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.addUserForm_birthday);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.addUserForm_btn_addUser);
             this.Controls.Add(this.addUserForm_list_role);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.addUserForm_input_password);
@@ -208,7 +213,7 @@
         private TextBox addUserForm_input_password;
         private Label label5;
         private ComboBox addUserForm_list_role;
-        private Button button2;
+        private Button addUserForm_btn_addUser;
         private DateTimePicker addUserForm_birthday;
         private Label label6;
         private Label label7;

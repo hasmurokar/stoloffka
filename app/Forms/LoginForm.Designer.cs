@@ -61,6 +61,7 @@
             this.loginForm_btn_entry.TabIndex = 2;
             this.loginForm_btn_entry.Text = "Войти";
             this.loginForm_btn_entry.UseVisualStyleBackColor = true;
+            this.loginForm_btn_entry.Click += new System.EventHandler(this.loginForm_btn_entry_Click);
             // 
             // loginForm_input_login
             // 
@@ -68,13 +69,16 @@
             this.loginForm_input_login.Name = "loginForm_input_login";
             this.loginForm_input_login.Size = new System.Drawing.Size(254, 26);
             this.loginForm_input_login.TabIndex = 3;
+            this.loginForm_input_login.WordWrap = false;
             // 
             // loginForm_input_password
             // 
             this.loginForm_input_password.Location = new System.Drawing.Point(12, 82);
             this.loginForm_input_password.Name = "loginForm_input_password";
+            this.loginForm_input_password.PasswordChar = '*';
             this.loginForm_input_password.Size = new System.Drawing.Size(254, 26);
             this.loginForm_input_password.TabIndex = 4;
+            this.loginForm_input_password.WordWrap = false;
             // 
             // LoginForm
             // 

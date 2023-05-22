@@ -66,6 +66,7 @@
             this.adminMainForm_menu_addUser.Name = "adminMainForm_menu_addUser";
             this.adminMainForm_menu_addUser.Size = new System.Drawing.Size(180, 23);
             this.adminMainForm_menu_addUser.Text = "Добавить пользователя...";
+            this.adminMainForm_menu_addUser.Click += new System.EventHandler(this.adminMainForm_menu_addUser_Click);
             // 
             // adminMainForm_menu_dishList
             // 

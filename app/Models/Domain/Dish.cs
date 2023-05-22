@@ -16,6 +16,6 @@ namespace app.Models.Domain
         public User User { get; set; }
         public int UserId { get; set; }
         public List<Ingredient> Ingredients { get; set; } = new();
-        public List<Order> Orders { get; set; } = new();
+        public List<DishOrder> DishOrders { get; set; } = new();
     }
 }
