@@ -32,8 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.addIngredientForm_name = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addIngridientForm_btn_addNew = new System.Windows.Forms.Button();
+            this.addIngridientForm_btn_save = new System.Windows.Forms.Button();
             this.addIngredientForm_weight = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.addIngredientForm_weight)).BeginInit();
             this.SuspendLayout();
@@ -72,23 +72,23 @@
             this.addIngredientForm_name.Size = new System.Drawing.Size(295, 26);
             this.addIngredientForm_name.TabIndex = 3;
             // 
-            // button1
+            // addIngridientForm_btn_addNew
             // 
-            this.button1.Location = new System.Drawing.Point(349, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 26);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Добавить новый";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addIngridientForm_btn_addNew.Location = new System.Drawing.Point(349, 58);
+            this.addIngridientForm_btn_addNew.Name = "addIngridientForm_btn_addNew";
+            this.addIngridientForm_btn_addNew.Size = new System.Drawing.Size(175, 26);
+            this.addIngridientForm_btn_addNew.TabIndex = 4;
+            this.addIngridientForm_btn_addNew.Text = "Добавить новый";
+            this.addIngridientForm_btn_addNew.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // addIngridientForm_btn_save
             // 
-            this.button2.Location = new System.Drawing.Point(183, 164);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 30);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Сохранить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addIngridientForm_btn_save.Location = new System.Drawing.Point(183, 164);
+            this.addIngridientForm_btn_save.Name = "addIngridientForm_btn_save";
+            this.addIngridientForm_btn_save.Size = new System.Drawing.Size(174, 30);
+            this.addIngridientForm_btn_save.TabIndex = 6;
+            this.addIngridientForm_btn_save.Text = "Сохранить";
+            this.addIngridientForm_btn_save.UseVisualStyleBackColor = true;
             // 
             // addIngredientForm_weight
             // 
@@ -108,13 +108,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 206);
             this.Controls.Add(this.addIngredientForm_weight);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addIngridientForm_btn_save);
+            this.Controls.Add(this.addIngridientForm_btn_addNew);
             this.Controls.Add(this.addIngredientForm_name);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddIngredientForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Форма добавления ингредиентов";
             ((System.ComponentModel.ISupportInitialize)(this.addIngredientForm_weight)).EndInit();
             this.ResumeLayout(false);
@@ -128,8 +129,8 @@
         private Label label2;
         private Label label3;
         private TextBox addIngredientForm_name;
-        private Button button1;
-        private Button button2;
+        private Button addIngridientForm_btn_addNew;
+        private Button addIngridientForm_btn_save;
         private NumericUpDown addIngredientForm_weight;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using app.Domain;
+using app.Models.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,26 @@ namespace app.Forms
         public AddNewIngredientForm()
         {
             InitializeComponent();
+        }
+
+        private async void addNewIngredientForm_btn_add_Click(object sender, EventArgs e)
+        {
+            addNewIngredientForm_btn_add.Text = "Загрузка...";
+            addNewIngredientForm_btn_add.Enabled = false;
+            addNewIngredientForm_input_name.Enabled = false;
+            using var db = new AppDbContext();
+            var ingridient = new IngredientKind
+            {
+                Name = addNewIngredientForm_input_name.Text,
+            };
+            await db.IngredientKinds.AddAsync(ingridient);
+            await db.SaveChangesAsync();
+
+            MessageBox.Show("Ингредиент добавлен");
+            addNewIngredientForm_input_name.Clear();
+            addNewIngredientForm_btn_add.Text = "Добавить";
+            addNewIngredientForm_btn_add.Enabled = true;
+            addNewIngredientForm_input_name.Enabled = true;
         }
     }
 }

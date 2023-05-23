@@ -16,5 +16,18 @@ namespace app.Forms
         {
             InitializeComponent();
         }
+
+        private void addDishForm_btn_back_Click(object sender, EventArgs e)
+        {
+            var adminMainForm = new AdminMainForm();
+            adminMainForm.Show();
+            this.Close();
+        }
+
+        private void addDishForm_btn_addIngredient_Click(object sender, EventArgs e)
+        {
+            var addIngridientForm = new AddIngredientForm();
+            addIngridientForm.Show();
+        }
     }
 }

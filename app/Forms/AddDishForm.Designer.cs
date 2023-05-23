@@ -53,6 +53,7 @@
             this.addDishForm_btn_back.TabIndex = 0;
             this.addDishForm_btn_back.Text = "Назад";
             this.addDishForm_btn_back.UseVisualStyleBackColor = true;
+            this.addDishForm_btn_back.Click += new System.EventHandler(this.addDishForm_btn_back_Click);
             // 
             // label1
             // 
@@ -154,6 +155,7 @@
             this.addDishForm_btn_addIngredient.TabIndex = 15;
             this.addDishForm_btn_addIngredient.Text = "Добавить ингредиент";
             this.addDishForm_btn_addIngredient.UseVisualStyleBackColor = true;
+            this.addDishForm_btn_addIngredient.Click += new System.EventHandler(this.addDishForm_btn_addIngredient_Click);
             // 
             // addDishForm_table
             // 

@@ -91,14 +91,6 @@ namespace app.Forms
             addUserForm_input_phone.Clear();
         }
 
-        private void AddUserRole()
-        {
-            if (addUserForm_list_role.SelectedText == "Администратор")
-            {
-
-            }
-        }
-
         private EnumRole GetCurrentRole()
         {
             Enum.TryParse(addUserForm_list_role.SelectedValue.ToString(), out EnumRole status);

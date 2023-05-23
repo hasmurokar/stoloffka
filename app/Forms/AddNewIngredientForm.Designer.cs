@@ -67,6 +67,7 @@
             this.addNewIngredientForm_btn_add.TabIndex = 3;
             this.addNewIngredientForm_btn_add.Text = "Добавить";
             this.addNewIngredientForm_btn_add.UseVisualStyleBackColor = true;
+            this.addNewIngredientForm_btn_add.Click += new System.EventHandler(this.addNewIngredientForm_btn_add_Click);
             // 
             // AddNewIngredientForm
             // 
