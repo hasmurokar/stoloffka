@@ -18,6 +18,10 @@ namespace app
 
         private async void loginForm_btn_entry_Click(object sender, EventArgs e)
         {
+            loginForm_btn_entry.Enabled = false;
+            loginForm_btn_entry.Text = "Загрузка...";
+            loginForm_input_login.Enabled = false;
+            loginForm_input_password.Enabled = false;
             var login = loginForm_input_login.Text;
             var password = loginForm_input_password.Text;
             var result = await _authService.LogIn(login, password);
@@ -47,6 +51,10 @@ namespace app
                 MessageBox.Show("Пароль или логин введен неверно!");
                 loginForm_input_login.Clear();
                 loginForm_input_password.Clear();
+                loginForm_btn_entry.Enabled = true;
+                loginForm_btn_entry.Text = "Войти";
+                loginForm_input_login.Enabled = true;
+                loginForm_input_password.Enabled = true;
             }
         }
     }

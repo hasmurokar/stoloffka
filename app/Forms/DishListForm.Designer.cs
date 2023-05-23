@@ -63,6 +63,7 @@
             this.dishListForm_btn_back.TabIndex = 2;
             this.dishListForm_btn_back.Text = "Назад";
             this.dishListForm_btn_back.UseVisualStyleBackColor = true;
+            this.dishListForm_btn_back.Click += new System.EventHandler(this.dishListForm_btn_back_Click);
             // 
             // dishListForm_btn_delete
             // 
@@ -72,6 +73,7 @@
             this.dishListForm_btn_delete.TabIndex = 3;
             this.dishListForm_btn_delete.Text = "Удалить";
             this.dishListForm_btn_delete.UseVisualStyleBackColor = true;
+            this.dishListForm_btn_delete.Click += new System.EventHandler(this.dishListForm_btn_delete_Click);
             // 
             // dishListForm_btn_update
             // 
@@ -81,6 +83,7 @@
             this.dishListForm_btn_update.TabIndex = 4;
             this.dishListForm_btn_update.Text = "Редактировать";
             this.dishListForm_btn_update.UseVisualStyleBackColor = true;
+            this.dishListForm_btn_update.Click += new System.EventHandler(this.dishListForm_btn_update_Click);
             // 
             // DishListForm
             // 
@@ -94,6 +97,7 @@
             this.Controls.Add(this.dishListForm_list_dishes);
             this.Name = "DishListForm";
             this.Text = "Форма списка блюд";
+            this.Load += new System.EventHandler(this.DishListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dishListForm_list_dishes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

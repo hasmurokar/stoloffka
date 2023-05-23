@@ -62,6 +62,7 @@
             this.addUserForm_btn_back.TabIndex = 1;
             this.addUserForm_btn_back.Text = "Назад";
             this.addUserForm_btn_back.UseVisualStyleBackColor = true;
+            this.addUserForm_btn_back.Click += new System.EventHandler(this.addUserForm_btn_back_Click);
             // 
             // addUserForm_input_fio
             // 
@@ -196,6 +197,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddUserForm";
             this.Text = "Форма добавления пользователя";
+            this.Load += new System.EventHandler(this.AddUserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

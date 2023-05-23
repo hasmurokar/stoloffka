@@ -60,6 +60,7 @@
             this.adminMainForm_menu_addDish.Name = "adminMainForm_menu_addDish";
             this.adminMainForm_menu_addDish.Size = new System.Drawing.Size(137, 23);
             this.adminMainForm_menu_addDish.Text = "Добавить блюдо...";
+            this.adminMainForm_menu_addDish.Click += new System.EventHandler(this.adminMainForm_menu_addDish_Click);
             // 
             // adminMainForm_menu_addUser
             // 
@@ -73,6 +74,7 @@
             this.adminMainForm_menu_dishList.Name = "adminMainForm_menu_dishList";
             this.adminMainForm_menu_dishList.Size = new System.Drawing.Size(105, 23);
             this.adminMainForm_menu_dishList.Text = "Список блюд";
+            this.adminMainForm_menu_dishList.Click += new System.EventHandler(this.adminMainForm_menu_dishList_Click);
             // 
             // adminMainForm_btn_exit
             // 
@@ -83,14 +85,16 @@
             this.adminMainForm_btn_exit.TabIndex = 5;
             this.adminMainForm_btn_exit.Text = "Выйти из аккаунта";
             this.adminMainForm_btn_exit.UseVisualStyleBackColor = false;
+            this.adminMainForm_btn_exit.Click += new System.EventHandler(this.adminMainForm_btn_exit_Click);
             // 
             // adminMainForm_list_users
             // 
-            this.adminMainForm_list_users.FormattingEnabled = true;
+            this.adminMainForm_list_users.CausesValidation = false;
             this.adminMainForm_list_users.Location = new System.Drawing.Point(44, 84);
             this.adminMainForm_list_users.Name = "adminMainForm_list_users";
             this.adminMainForm_list_users.Size = new System.Drawing.Size(285, 27);
             this.adminMainForm_list_users.TabIndex = 6;
+            this.adminMainForm_list_users.SelectedIndexChanged += new System.EventHandler(this.adminMainForm_list_users_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -126,6 +130,7 @@
             this.adminMainForm_btn_save.TabIndex = 10;
             this.adminMainForm_btn_save.Text = "Сохранить";
             this.adminMainForm_btn_save.UseVisualStyleBackColor = true;
+            this.adminMainForm_btn_save.Click += new System.EventHandler(this.adminMainForm_btn_save_Click);
             // 
             // adminMainForm_btn_delete
             // 
@@ -135,6 +140,7 @@
             this.adminMainForm_btn_delete.TabIndex = 11;
             this.adminMainForm_btn_delete.Text = "Удалить";
             this.adminMainForm_btn_delete.UseVisualStyleBackColor = true;
+            this.adminMainForm_btn_delete.Click += new System.EventHandler(this.adminMainForm_btn_delete_Click);
             // 
             // adminMainForm_btn_changeInfo
             // 
@@ -144,6 +150,7 @@
             this.adminMainForm_btn_changeInfo.TabIndex = 12;
             this.adminMainForm_btn_changeInfo.Text = "Изменить информацию";
             this.adminMainForm_btn_changeInfo.UseVisualStyleBackColor = true;
+            this.adminMainForm_btn_changeInfo.Click += new System.EventHandler(this.adminMainForm_btn_changeInfo_Click);
             // 
             // AdminMainForm
             // 
@@ -162,6 +169,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminMainForm";
             this.Text = "Форма администратора";
+            this.Load += new System.EventHandler(this.AdminMainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
