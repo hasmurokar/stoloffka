@@ -31,17 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.addIngredientForm_name = new System.Windows.Forms.TextBox();
-            this.addIngridientForm_btn_addNew = new System.Windows.Forms.Button();
-            this.addIngridientForm_btn_save = new System.Windows.Forms.Button();
+            this.addIngredientForm_btn_addNew = new System.Windows.Forms.Button();
+            this.addIngredientForm_btn_save = new System.Windows.Forms.Button();
             this.addIngredientForm_weight = new System.Windows.Forms.NumericUpDown();
+            this.addIngredientForm_list_ingredients = new System.Windows.Forms.ComboBox();
+            this.addIngredientForm_btn_search = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.addIngredientForm_weight)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(196, 9);
+            this.label1.Location = new System.Drawing.Point(132, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 19);
             this.label1.TabIndex = 0;
@@ -65,30 +66,25 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Вес (г)";
             // 
-            // addIngredientForm_name
+            // addIngredientForm_btn_addNew
             // 
-            this.addIngredientForm_name.Location = new System.Drawing.Point(7, 58);
-            this.addIngredientForm_name.Name = "addIngredientForm_name";
-            this.addIngredientForm_name.Size = new System.Drawing.Size(295, 26);
-            this.addIngredientForm_name.TabIndex = 3;
+            this.addIngredientForm_btn_addNew.Location = new System.Drawing.Point(312, 58);
+            this.addIngredientForm_btn_addNew.Name = "addIngredientForm_btn_addNew";
+            this.addIngredientForm_btn_addNew.Size = new System.Drawing.Size(175, 26);
+            this.addIngredientForm_btn_addNew.TabIndex = 4;
+            this.addIngredientForm_btn_addNew.Text = "Добавить новый";
+            this.addIngredientForm_btn_addNew.UseVisualStyleBackColor = true;
+            this.addIngredientForm_btn_addNew.Click += new System.EventHandler(this.addIngredientForm_btn_addNew_Click);
             // 
-            // addIngridientForm_btn_addNew
+            // addIngredientForm_btn_save
             // 
-            this.addIngridientForm_btn_addNew.Location = new System.Drawing.Point(349, 58);
-            this.addIngridientForm_btn_addNew.Name = "addIngridientForm_btn_addNew";
-            this.addIngridientForm_btn_addNew.Size = new System.Drawing.Size(175, 26);
-            this.addIngridientForm_btn_addNew.TabIndex = 4;
-            this.addIngridientForm_btn_addNew.Text = "Добавить новый";
-            this.addIngridientForm_btn_addNew.UseVisualStyleBackColor = true;
-            // 
-            // addIngridientForm_btn_save
-            // 
-            this.addIngridientForm_btn_save.Location = new System.Drawing.Point(183, 164);
-            this.addIngridientForm_btn_save.Name = "addIngridientForm_btn_save";
-            this.addIngridientForm_btn_save.Size = new System.Drawing.Size(174, 30);
-            this.addIngridientForm_btn_save.TabIndex = 6;
-            this.addIngridientForm_btn_save.Text = "Сохранить";
-            this.addIngridientForm_btn_save.UseVisualStyleBackColor = true;
+            this.addIngredientForm_btn_save.Location = new System.Drawing.Point(230, 98);
+            this.addIngredientForm_btn_save.Name = "addIngredientForm_btn_save";
+            this.addIngredientForm_btn_save.Size = new System.Drawing.Size(255, 48);
+            this.addIngredientForm_btn_save.TabIndex = 6;
+            this.addIngredientForm_btn_save.Text = "Сохранить";
+            this.addIngredientForm_btn_save.UseVisualStyleBackColor = true;
+            this.addIngredientForm_btn_save.Click += new System.EventHandler(this.addIngredientForm_btn_save_Click);
             // 
             // addIngredientForm_weight
             // 
@@ -102,21 +98,40 @@
             this.addIngredientForm_weight.Size = new System.Drawing.Size(120, 26);
             this.addIngredientForm_weight.TabIndex = 7;
             // 
+            // addIngredientForm_list_ingredients
+            // 
+            this.addIngredientForm_list_ingredients.FormattingEnabled = true;
+            this.addIngredientForm_list_ingredients.Location = new System.Drawing.Point(12, 57);
+            this.addIngredientForm_list_ingredients.Name = "addIngredientForm_list_ingredients";
+            this.addIngredientForm_list_ingredients.Size = new System.Drawing.Size(200, 27);
+            this.addIngredientForm_list_ingredients.TabIndex = 8;
+            // 
+            // addIngredientForm_btn_search
+            // 
+            this.addIngredientForm_btn_search.Location = new System.Drawing.Point(230, 58);
+            this.addIngredientForm_btn_search.Name = "addIngredientForm_btn_search";
+            this.addIngredientForm_btn_search.Size = new System.Drawing.Size(76, 26);
+            this.addIngredientForm_btn_search.TabIndex = 9;
+            this.addIngredientForm_btn_search.Text = "Поиск";
+            this.addIngredientForm_btn_search.UseVisualStyleBackColor = true;
+            this.addIngredientForm_btn_search.Click += new System.EventHandler(this.addIngredientForm_btn_search_Click);
+            // 
             // AddIngredientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 206);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.ClientSize = new System.Drawing.Size(497, 163);
+            this.Controls.Add(this.addIngredientForm_btn_search);
+            this.Controls.Add(this.addIngredientForm_list_ingredients);
             this.Controls.Add(this.addIngredientForm_weight);
-            this.Controls.Add(this.addIngridientForm_btn_save);
-            this.Controls.Add(this.addIngridientForm_btn_addNew);
-            this.Controls.Add(this.addIngredientForm_name);
+            this.Controls.Add(this.addIngredientForm_btn_save);
+            this.Controls.Add(this.addIngredientForm_btn_addNew);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddIngredientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Форма добавления ингредиентов";
+            this.Load += new System.EventHandler(this.AddIngredientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.addIngredientForm_weight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,9 +143,10 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox addIngredientForm_name;
-        private Button addIngridientForm_btn_addNew;
-        private Button addIngridientForm_btn_save;
+        private Button addIngredientForm_btn_addNew;
+        private Button addIngredientForm_btn_save;
         private NumericUpDown addIngredientForm_weight;
+        private ComboBox addIngredientForm_list_ingredients;
+        private Button addIngredientForm_btn_search;
     }
 }

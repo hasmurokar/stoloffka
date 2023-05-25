@@ -1,4 +1,6 @@
-﻿using app.Domain;
+﻿using app.Data;
+using app.Domain;
+using app.Models.Common;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -35,6 +37,10 @@ namespace app.Forms
             }).ToList();
             dishListForm_list_dishes.DataSource = data;
             DataGridView_ChangeColumnName();
+            foreach (DataGridViewColumn column in dishListForm_list_dishes.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
         }
         
         private void dishListForm_btn_back_Click(object sender, EventArgs e)
@@ -57,7 +63,7 @@ namespace app.Forms
             ButtonsEnable(false);
             var selectedRow = dishListForm_list_dishes.SelectedRows[0];
             DialogResult result = MessageBox.Show(
-                                    "Удалить пользователя?",
+                                    "Удалить блюдо?",
                                     "Сообщение",
                                     MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Information,
@@ -79,6 +85,10 @@ namespace app.Forms
 
         private void dishListForm_btn_update_Click(object sender, EventArgs e)
         {
+            var value = dishListForm_list_dishes.SelectedRows[0];
+            var id = Convert.ToInt32(value.Cells[0].Value);
+            using var db = new AppDbContext();
+            DataStore.DishForm = db.Dishes.FirstOrDefault(x => x.Id == id);
             var addDishForm = new AddDishForm();
             addDishForm.Show();
             this.Close();

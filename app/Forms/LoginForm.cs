@@ -18,8 +18,8 @@ namespace app
 
         private async void loginForm_btn_entry_Click(object sender, EventArgs e)
         {
-            loginForm_btn_entry.Enabled = false;
             loginForm_btn_entry.Text = "Загрузка...";
+            loginForm_btn_entry.Enabled = false;
             loginForm_input_login.Enabled = false;
             loginForm_input_password.Enabled = false;
             var login = loginForm_input_login.Text;
