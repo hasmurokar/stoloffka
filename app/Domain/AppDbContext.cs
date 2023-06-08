@@ -14,6 +14,7 @@ namespace app.Domain
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<IngredientKind> IngredientKinds { get; set; }
         public DbSet<DishOrder> DishOrders { get; set; }
+        public DbSet<DishDocumentRelation> DishDocumentRelations { get; set; }
         public AppDbContext() : base()
         {
         }

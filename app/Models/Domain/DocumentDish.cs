@@ -4,12 +4,11 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        /// <summary>
+        /// Дата создания
+        /// </summary>
         public DateTime Date { get; set; }
         public int Count { get; set; }
-        public decimal TotalPrice { get; set; }
-        /// <summary>
-        /// Содержимое документа
-        /// </summary>
-        public string Content { get; set; }
+        public List<DishDocumentRelation> DishDocumentRelations { get; set; } = new();
     }
 }

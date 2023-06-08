@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.chefMainForm_btn_exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.chefMainForm_combobox_dish = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button3 = new System.Windows.Forms.Button();
+            this.chefMainForm_portionCount = new System.Windows.Forms.NumericUpDown();
+            this.chefMainForm_btn_count = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.chefMainForm_label_dishName = new System.Windows.Forms.Label();
             this.chefMainForm_date = new System.Windows.Forms.DateTimePicker();
@@ -44,22 +44,23 @@
             this.chefMainForm_list_document = new System.Windows.Forms.DataGridView();
             this.chefMainForm_btn_saveDoc = new System.Windows.Forms.Button();
             this.chefMainForm_btn_clearListDoc = new System.Windows.Forms.Button();
-            this.chefMainForm_btn_printDoc = new System.Windows.Forms.Button();
             this.chefMainForm_btn_viewDishes = new System.Windows.Forms.Button();
             this.chefMainForm_btn_viewDocs = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.chefMainForm_checkBox_print = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.chefMainForm_portionCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chefMainForm_list_count)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chefMainForm_list_document)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // chefMainForm_btn_exit
             // 
-            this.button2.Location = new System.Drawing.Point(823, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 29);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Выйти";
-            this.button2.UseVisualStyleBackColor = true;
+            this.chefMainForm_btn_exit.Location = new System.Drawing.Point(823, 12);
+            this.chefMainForm_btn_exit.Name = "chefMainForm_btn_exit";
+            this.chefMainForm_btn_exit.Size = new System.Drawing.Size(113, 29);
+            this.chefMainForm_btn_exit.TabIndex = 2;
+            this.chefMainForm_btn_exit.Text = "Выйти";
+            this.chefMainForm_btn_exit.UseVisualStyleBackColor = true;
+            this.chefMainForm_btn_exit.Click += new System.EventHandler(this.chefMainForm_btn_exit_Click);
             // 
             // label1
             // 
@@ -70,13 +71,13 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Выберите название блюда";
             // 
-            // comboBox1
+            // chefMainForm_combobox_dish
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(285, 27);
-            this.comboBox1.TabIndex = 6;
+            this.chefMainForm_combobox_dish.FormattingEnabled = true;
+            this.chefMainForm_combobox_dish.Location = new System.Drawing.Point(12, 31);
+            this.chefMainForm_combobox_dish.Name = "chefMainForm_combobox_dish";
+            this.chefMainForm_combobox_dish.Size = new System.Drawing.Size(285, 27);
+            this.chefMainForm_combobox_dish.TabIndex = 6;
             // 
             // label2
             // 
@@ -87,21 +88,37 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Кол-во порций:";
             // 
-            // numericUpDown1
+            // chefMainForm_portionCount
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(12, 83);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown1.TabIndex = 8;
+            this.chefMainForm_portionCount.Location = new System.Drawing.Point(12, 83);
+            this.chefMainForm_portionCount.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.chefMainForm_portionCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.chefMainForm_portionCount.Name = "chefMainForm_portionCount";
+            this.chefMainForm_portionCount.Size = new System.Drawing.Size(120, 26);
+            this.chefMainForm_portionCount.TabIndex = 8;
+            this.chefMainForm_portionCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // button3
+            // chefMainForm_btn_count
             // 
-            this.button3.Location = new System.Drawing.Point(153, 72);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 37);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Рассчитать";
-            this.button3.UseVisualStyleBackColor = true;
+            this.chefMainForm_btn_count.Location = new System.Drawing.Point(153, 72);
+            this.chefMainForm_btn_count.Name = "chefMainForm_btn_count";
+            this.chefMainForm_btn_count.Size = new System.Drawing.Size(144, 37);
+            this.chefMainForm_btn_count.TabIndex = 9;
+            this.chefMainForm_btn_count.Text = "Рассчитать";
+            this.chefMainForm_btn_count.UseVisualStyleBackColor = true;
+            this.chefMainForm_btn_count.Click += new System.EventHandler(this.chefMainForm_btn_count_Click);
             // 
             // label4
             // 
@@ -120,6 +137,7 @@
             this.chefMainForm_label_dishName.Size = new System.Drawing.Size(285, 19);
             this.chefMainForm_label_dishName.TabIndex = 12;
             this.chefMainForm_label_dishName.Text = "______________________________________________";
+            this.chefMainForm_label_dishName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // chefMainForm_date
             // 
@@ -130,9 +148,12 @@
             // 
             // chefMainForm_list_count
             // 
+            this.chefMainForm_list_count.AllowUserToAddRows = false;
+            this.chefMainForm_list_count.AllowUserToDeleteRows = false;
             this.chefMainForm_list_count.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.chefMainForm_list_count.Location = new System.Drawing.Point(13, 223);
             this.chefMainForm_list_count.Name = "chefMainForm_list_count";
+            this.chefMainForm_list_count.ReadOnly = true;
             this.chefMainForm_list_count.RowTemplate.Height = 28;
             this.chefMainForm_list_count.Size = new System.Drawing.Size(285, 357);
             this.chefMainForm_list_count.TabIndex = 14;
@@ -163,24 +184,30 @@
             this.cfehMainForm_btn_addToDoc.TabIndex = 17;
             this.cfehMainForm_btn_addToDoc.Text = "Добавить в документ";
             this.cfehMainForm_btn_addToDoc.UseVisualStyleBackColor = true;
+            this.cfehMainForm_btn_addToDoc.Click += new System.EventHandler(this.cfehMainForm_btn_addToDoc_Click);
             // 
             // chefMainForm_list_document
             // 
+            this.chefMainForm_list_document.AllowUserToAddRows = false;
+            this.chefMainForm_list_document.AllowUserToDeleteRows = false;
             this.chefMainForm_list_document.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.chefMainForm_list_document.Location = new System.Drawing.Point(354, 117);
             this.chefMainForm_list_document.Name = "chefMainForm_list_document";
+            this.chefMainForm_list_document.ReadOnly = true;
             this.chefMainForm_list_document.RowTemplate.Height = 28;
             this.chefMainForm_list_document.Size = new System.Drawing.Size(519, 329);
             this.chefMainForm_list_document.TabIndex = 18;
+            this.chefMainForm_list_document.SelectionChanged += new System.EventHandler(this.chefMainForm_list_document_SelectionChanged);
             // 
             // chefMainForm_btn_saveDoc
             // 
-            this.chefMainForm_btn_saveDoc.Location = new System.Drawing.Point(354, 452);
+            this.chefMainForm_btn_saveDoc.Location = new System.Drawing.Point(354, 456);
             this.chefMainForm_btn_saveDoc.Name = "chefMainForm_btn_saveDoc";
             this.chefMainForm_btn_saveDoc.Size = new System.Drawing.Size(144, 27);
             this.chefMainForm_btn_saveDoc.TabIndex = 19;
             this.chefMainForm_btn_saveDoc.Text = "Сохранить";
             this.chefMainForm_btn_saveDoc.UseVisualStyleBackColor = true;
+            this.chefMainForm_btn_saveDoc.Click += new System.EventHandler(this.chefMainForm_btn_saveDoc_Click);
             // 
             // chefMainForm_btn_clearListDoc
             // 
@@ -188,44 +215,48 @@
             this.chefMainForm_btn_clearListDoc.Name = "chefMainForm_btn_clearListDoc";
             this.chefMainForm_btn_clearListDoc.Size = new System.Drawing.Size(99, 27);
             this.chefMainForm_btn_clearListDoc.TabIndex = 20;
-            this.chefMainForm_btn_clearListDoc.Text = "Очистить";
+            this.chefMainForm_btn_clearListDoc.Text = "Удалить";
             this.chefMainForm_btn_clearListDoc.UseVisualStyleBackColor = true;
-            // 
-            // chefMainForm_btn_printDoc
-            // 
-            this.chefMainForm_btn_printDoc.Location = new System.Drawing.Point(504, 452);
-            this.chefMainForm_btn_printDoc.Name = "chefMainForm_btn_printDoc";
-            this.chefMainForm_btn_printDoc.Size = new System.Drawing.Size(138, 27);
-            this.chefMainForm_btn_printDoc.TabIndex = 21;
-            this.chefMainForm_btn_printDoc.Text = "Распечатать";
-            this.chefMainForm_btn_printDoc.UseVisualStyleBackColor = true;
+            this.chefMainForm_btn_clearListDoc.Click += new System.EventHandler(this.chefMainForm_btn_clearListDoc_Click);
             // 
             // chefMainForm_btn_viewDishes
             // 
-            this.chefMainForm_btn_viewDishes.Location = new System.Drawing.Point(488, 524);
+            this.chefMainForm_btn_viewDishes.Location = new System.Drawing.Point(488, 537);
             this.chefMainForm_btn_viewDishes.Name = "chefMainForm_btn_viewDishes";
             this.chefMainForm_btn_viewDishes.Size = new System.Drawing.Size(267, 34);
             this.chefMainForm_btn_viewDishes.TabIndex = 22;
             this.chefMainForm_btn_viewDishes.Text = "Просмотреть список блюд";
             this.chefMainForm_btn_viewDishes.UseVisualStyleBackColor = true;
+            this.chefMainForm_btn_viewDishes.Click += new System.EventHandler(this.chefMainForm_btn_viewDishes_Click);
             // 
             // chefMainForm_btn_viewDocs
             // 
-            this.chefMainForm_btn_viewDocs.Location = new System.Drawing.Point(488, 564);
+            this.chefMainForm_btn_viewDocs.Location = new System.Drawing.Point(488, 577);
             this.chefMainForm_btn_viewDocs.Name = "chefMainForm_btn_viewDocs";
             this.chefMainForm_btn_viewDocs.Size = new System.Drawing.Size(267, 34);
             this.chefMainForm_btn_viewDocs.TabIndex = 23;
             this.chefMainForm_btn_viewDocs.Text = "Просмотреть список документов";
             this.chefMainForm_btn_viewDocs.UseVisualStyleBackColor = true;
+            this.chefMainForm_btn_viewDocs.Click += new System.EventHandler(this.chefMainForm_btn_viewDocs_Click);
+            // 
+            // chefMainForm_checkBox_print
+            // 
+            this.chefMainForm_checkBox_print.AutoSize = true;
+            this.chefMainForm_checkBox_print.Location = new System.Drawing.Point(504, 456);
+            this.chefMainForm_checkBox_print.Name = "chefMainForm_checkBox_print";
+            this.chefMainForm_checkBox_print.Size = new System.Drawing.Size(142, 23);
+            this.chefMainForm_checkBox_print.TabIndex = 24;
+            this.chefMainForm_checkBox_print.Text = "Сохранить в файл";
+            this.chefMainForm_checkBox_print.UseVisualStyleBackColor = true;
             // 
             // ChefMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 623);
+            this.Controls.Add(this.chefMainForm_checkBox_print);
             this.Controls.Add(this.chefMainForm_btn_viewDocs);
             this.Controls.Add(this.chefMainForm_btn_viewDishes);
-            this.Controls.Add(this.chefMainForm_btn_printDoc);
             this.Controls.Add(this.chefMainForm_btn_clearListDoc);
             this.Controls.Add(this.chefMainForm_btn_saveDoc);
             this.Controls.Add(this.chefMainForm_list_document);
@@ -236,15 +267,16 @@
             this.Controls.Add(this.chefMainForm_date);
             this.Controls.Add(this.chefMainForm_label_dishName);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.chefMainForm_btn_count);
+            this.Controls.Add(this.chefMainForm_portionCount);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.chefMainForm_combobox_dish);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.chefMainForm_btn_exit);
             this.Name = "ChefMainForm";
             this.Text = "Форма расчета повара";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Load += new System.EventHandler(this.ChefMainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.chefMainForm_portionCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chefMainForm_list_count)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chefMainForm_list_document)).EndInit();
             this.ResumeLayout(false);
@@ -253,12 +285,12 @@
         }
 
         #endregion
-        private Button button2;
+        private Button chefMainForm_btn_exit;
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox chefMainForm_combobox_dish;
         private Label label2;
-        private NumericUpDown numericUpDown1;
-        private Button button3;
+        private NumericUpDown chefMainForm_portionCount;
+        private Button chefMainForm_btn_count;
         private Label label4;
         private Label chefMainForm_label_dishName;
         private DateTimePicker chefMainForm_date;
@@ -269,8 +301,8 @@
         private DataGridView chefMainForm_list_document;
         private Button chefMainForm_btn_saveDoc;
         private Button chefMainForm_btn_clearListDoc;
-        private Button chefMainForm_btn_printDoc;
         private Button chefMainForm_btn_viewDishes;
         private Button chefMainForm_btn_viewDocs;
+        private CheckBox chefMainForm_checkBox_print;
     }
 }

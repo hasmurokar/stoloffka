@@ -54,8 +54,8 @@ namespace app.Forms
         {
             using var db = new AppDbContext();
             var users = db.Users.ToList();
-            var items = new List<UserCombobox>() { new UserCombobox() { Id = 0, Name = "Не выбрано" } };
-            items.AddRange(users.ConvertAll(x => new UserCombobox() { Id = x.Id, Name = x.Name }));
+            var items = new List<FillCombobox>() { new FillCombobox() { Id = 0, Name = "Не выбрано" } };
+            items.AddRange(users.ConvertAll(x => new FillCombobox() { Id = x.Id, Name = x.Name }));
             adminMainForm_list_users.DataSource = items;
             adminMainForm_list_users.DisplayMember = "Name";
             adminMainForm_list_users.ValueMember = "Id";

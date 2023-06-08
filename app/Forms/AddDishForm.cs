@@ -126,5 +126,28 @@ namespace app.Forms
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
+
+        private void addDishForm_btn_deleteIngredient_Click(object sender, EventArgs e)
+        {
+            using var db = new AppDbContext();
+            var selectedRow = addDishForm_table.SelectedRows[0];
+            DialogResult result = MessageBox.Show(
+                                    "Удалить ингредиент?",
+                                    "Сообщение",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Information,
+                                    MessageBoxDefaultButton.Button1);
+            if (result == DialogResult.Yes)
+            {
+                int selectedId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                var recordToDelete = db.Ingredients.FirstOrDefault(r => r.Id == selectedId);
+                if (recordToDelete != null)
+                {
+                    db.Ingredients.Remove(recordToDelete);
+                    db.SaveChanges();
+                    addDishForm_table.Rows.Remove(selectedRow);
+                }
+            }
+        }
     }
 }

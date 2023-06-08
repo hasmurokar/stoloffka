@@ -42,6 +42,7 @@
             this.addDishForm_btn_save = new System.Windows.Forms.Button();
             this.addDishForm_btn_addIngredient = new System.Windows.Forms.Button();
             this.addDishForm_table = new System.Windows.Forms.DataGridView();
+            this.addDishForm_btn_deleteIngredient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.addDishForm_table)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,7 +141,7 @@
             // 
             // addDishForm_btn_save
             // 
-            this.addDishForm_btn_save.Location = new System.Drawing.Point(13, 463);
+            this.addDishForm_btn_save.Location = new System.Drawing.Point(14, 516);
             this.addDishForm_btn_save.Name = "addDishForm_btn_save";
             this.addDishForm_btn_save.Size = new System.Drawing.Size(501, 43);
             this.addDishForm_btn_save.TabIndex = 14;
@@ -162,6 +163,8 @@
             // 
             this.addDishForm_table.AllowUserToAddRows = false;
             this.addDishForm_table.AllowUserToDeleteRows = false;
+            this.addDishForm_table.AllowUserToResizeColumns = false;
+            this.addDishForm_table.AllowUserToResizeRows = false;
             this.addDishForm_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.addDishForm_table.Location = new System.Drawing.Point(13, 219);
             this.addDishForm_table.Name = "addDishForm_table";
@@ -171,11 +174,22 @@
             this.addDishForm_table.Size = new System.Drawing.Size(501, 238);
             this.addDishForm_table.TabIndex = 16;
             // 
+            // addDishForm_btn_deleteIngredient
+            // 
+            this.addDishForm_btn_deleteIngredient.Location = new System.Drawing.Point(345, 463);
+            this.addDishForm_btn_deleteIngredient.Name = "addDishForm_btn_deleteIngredient";
+            this.addDishForm_btn_deleteIngredient.Size = new System.Drawing.Size(169, 31);
+            this.addDishForm_btn_deleteIngredient.TabIndex = 17;
+            this.addDishForm_btn_deleteIngredient.Text = "Удалить ингредиент";
+            this.addDishForm_btn_deleteIngredient.UseVisualStyleBackColor = true;
+            this.addDishForm_btn_deleteIngredient.Click += new System.EventHandler(this.addDishForm_btn_deleteIngredient_Click);
+            // 
             // AddDishForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 523);
+            this.ClientSize = new System.Drawing.Size(527, 570);
+            this.Controls.Add(this.addDishForm_btn_deleteIngredient);
             this.Controls.Add(this.addDishForm_table);
             this.Controls.Add(this.addDishForm_btn_addIngredient);
             this.Controls.Add(this.addDishForm_btn_save);
@@ -216,5 +230,6 @@
         private Button addDishForm_btn_save;
         private Button addDishForm_btn_addIngredient;
         private DataGridView addDishForm_table;
+        private Button addDishForm_btn_deleteIngredient;
     }
 }
