@@ -69,7 +69,7 @@
             this.loginForm_input_login.Name = "loginForm_input_login";
             this.loginForm_input_login.Size = new System.Drawing.Size(254, 26);
             this.loginForm_input_login.TabIndex = 3;
-            this.loginForm_input_login.Text = "petr";
+            this.loginForm_input_login.Text = "ivanesko";
             this.loginForm_input_login.WordWrap = false;
             // 
             // loginForm_input_password
@@ -79,7 +79,7 @@
             this.loginForm_input_password.PasswordChar = '*';
             this.loginForm_input_password.Size = new System.Drawing.Size(254, 26);
             this.loginForm_input_password.TabIndex = 4;
-            this.loginForm_input_password.Text = "1111";
+            this.loginForm_input_password.Text = "123123123";
             this.loginForm_input_password.WordWrap = false;
             // 
             // LoginForm

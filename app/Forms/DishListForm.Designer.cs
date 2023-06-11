@@ -38,10 +38,17 @@
             // 
             // dishListForm_list_dishes
             // 
+            this.dishListForm_list_dishes.AllowUserToAddRows = false;
+            this.dishListForm_list_dishes.AllowUserToDeleteRows = false;
+            this.dishListForm_list_dishes.AllowUserToResizeColumns = false;
+            this.dishListForm_list_dishes.AllowUserToResizeRows = false;
+            this.dishListForm_list_dishes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dishListForm_list_dishes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dishListForm_list_dishes.Location = new System.Drawing.Point(12, 41);
             this.dishListForm_list_dishes.Name = "dishListForm_list_dishes";
+            this.dishListForm_list_dishes.ReadOnly = true;
             this.dishListForm_list_dishes.RowTemplate.Height = 28;
+            this.dishListForm_list_dishes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dishListForm_list_dishes.Size = new System.Drawing.Size(751, 623);
             this.dishListForm_list_dishes.TabIndex = 0;
             // 

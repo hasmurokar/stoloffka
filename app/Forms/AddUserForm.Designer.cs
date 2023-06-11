@@ -171,6 +171,7 @@
             // addUserForm_input_phone
             // 
             this.addUserForm_input_phone.Location = new System.Drawing.Point(454, 247);
+            this.addUserForm_input_phone.MaxLength = 11;
             this.addUserForm_input_phone.Name = "addUserForm_input_phone";
             this.addUserForm_input_phone.Size = new System.Drawing.Size(200, 26);
             this.addUserForm_input_phone.TabIndex = 14;

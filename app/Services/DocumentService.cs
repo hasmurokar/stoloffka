@@ -1,20 +1,19 @@
 ﻿using app.Domain;
 using app.Models.Domain;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
 
 namespace app.Services
 {
     public class DocumentService
     {
 
-        public void Generate(int documentDishId)
+        public void GenerateDocReportDish(int documentDishId)
         {
             using var db = new AppDbContext();
             var entity = db.Documents
                 .Include(x => x.DishDocumentRelations)
                 .ThenInclude(x => x.Dish).FirstOrDefault(d => d.Id == documentDishId);
-            string text = CreateText(entity);
+            string text = CreateTextReportDish(entity);
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.txt)|*.txt";
@@ -37,7 +36,7 @@ namespace app.Services
                 throw new Exception();
         }
 
-        private static string CreateText(DocumentDish document)
+        private static string CreateTextReportDish(DocumentDish document)
         {
             var text = $"                    Отчетный документ №{document.Id}\n";
             text += $"                   Дата: {document.Date}\n";

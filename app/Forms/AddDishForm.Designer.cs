@@ -171,6 +171,7 @@
             this.addDishForm_table.ReadOnly = true;
             this.addDishForm_table.RowTemplate.Height = 28;
             this.addDishForm_table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.addDishForm_table.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.addDishForm_table.Size = new System.Drawing.Size(501, 238);
             this.addDishForm_table.TabIndex = 16;
             // 

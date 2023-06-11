@@ -25,6 +25,17 @@ namespace app.Domain
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<DishOrder>()
+                .HasOne(d => d.Order)
+                .WithMany(o => o.DishOrders)
+                .HasForeignKey(d => d.OrderId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<DishOrder>()
+                .HasOne(d => d.Dish)
+                .WithMany()
+                .HasForeignKey(d => d.DishId)
+                .OnDelete(DeleteBehavior.Restrict);
             onModelCreatingEnums(modelBuilder);
         }
 

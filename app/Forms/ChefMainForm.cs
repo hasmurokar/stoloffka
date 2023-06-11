@@ -31,10 +31,6 @@ namespace app.Forms
             chefMainForm_list_document.DataSource = listDishes;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
         private void InitComboboxDishes()
         {
             using var db = new AppDbContext();
@@ -137,7 +133,7 @@ namespace app.Forms
                 var documentService = new DocumentService();
                 try
                 {
-                    documentService.Generate(entity.Id);
+                    documentService.GenerateDocReportDish(entity.Id);
                 }
                 catch (Exception)
                 {
