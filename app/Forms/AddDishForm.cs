@@ -40,9 +40,19 @@ namespace app.Forms
 
         private void addDishForm_btn_back_Click(object sender, EventArgs e)
         {
-            var adminMainForm = new AdminMainForm();
-            adminMainForm.Show();
-            Close();
+            switch (DataStore.CurrentUser.Role)
+            {
+                case EnumRole.Admin:
+                    var adminMainForm = new AdminMainForm();
+                    this.Close();
+                    adminMainForm.Show();
+                    break;
+                case EnumRole.Chef:
+                    var chefMainForm = new ChefMainForm();
+                    this.Close();
+                    chefMainForm.Show();
+                    break;
+            }
         }
 
         private void addDishForm_btn_addIngredient_Click(object sender, EventArgs e)

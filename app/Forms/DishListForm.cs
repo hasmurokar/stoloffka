@@ -1,5 +1,6 @@
 ﻿using app.Data;
 using app.Domain;
+using app.Enums;
 using System.Data;
 
 namespace app.Forms
@@ -37,9 +38,19 @@ namespace app.Forms
 
         private void dishListForm_btn_back_Click(object sender, EventArgs e)
         {
-            var adminMainForm = new AdminMainForm();
-            adminMainForm.Show();
-            this.Close();
+            switch (DataStore.CurrentUser.Role)
+            {
+                case EnumRole.Admin:
+                    var adminMainForm = new AdminMainForm();
+                    this.Close();
+                    adminMainForm.Show();
+                    break;
+                case EnumRole.Chef:
+                    var chefMainForm = new ChefMainForm();
+                    this.Close();
+                    chefMainForm.Show();
+                    break;
+            }
         }
         private void DataGridView_ChangeColumnName()
         {
