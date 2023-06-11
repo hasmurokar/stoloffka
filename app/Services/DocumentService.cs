@@ -47,5 +47,50 @@ namespace app.Services
             }
             return text;
         }
+
+        public void GenerateBillReport(int billId)
+        {
+            using var db = new AppDbContext();
+            var entity = db.Orders
+                .Include(x => x.DishOrders)
+                .ThenInclude(x => x.Dish)
+                .Include(x => x.User)
+                .FirstOrDefault(d => d.Id == billId);
+            string text = CreateTextReportOrder(entity);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt";
+            saveFileDialog.Title = "Save Text Document";
+            var fileName = $"Заказ № {entity.Id}";
+            saveFileDialog.FileName = fileName;
+
+            DialogResult result = saveFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                using (var writer = new StreamWriter(filePath))
+                {
+                    writer.Write(text);
+                }
+            }
+            else
+                throw new Exception();
+        }
+
+        private static string CreateTextReportOrder(Order bill)
+        {
+            var text = $"                    Заказ №{bill.Id}\n";
+            text += $"                   Дата: {bill.Date}\n";
+            text += $"           ФИО кассира: {bill.User.Name}\n";
+            var relations = bill.DishOrders;
+            for (int i = 0; i < relations.Count; i++)
+            {
+                text += $"{i + 1}. {relations[i].Dish.Name}, Кол-во порций: {relations[i].CountDish}, Стоимость 1 порции: {relations[i].Dish.Price}\n";
+            }
+            text += $"\n           Стоимость заказа: {bill.TotalPrice}\n";
+            return text;
+        }
     }
 }

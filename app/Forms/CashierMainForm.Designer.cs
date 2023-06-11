@@ -51,6 +51,7 @@
             // 
             // cashierMainForm_pickDate
             // 
+            this.cashierMainForm_pickDate.Enabled = false;
             this.cashierMainForm_pickDate.Location = new System.Drawing.Point(47, 100);
             this.cashierMainForm_pickDate.Name = "cashierMainForm_pickDate";
             this.cashierMainForm_pickDate.Size = new System.Drawing.Size(200, 26);
@@ -69,9 +70,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 78);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(111, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 19);
+            this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Дата";
             // 
@@ -175,10 +177,15 @@
             // 
             // cashierMainForm_dataGrid
             // 
+            this.cashierMainForm_dataGrid.AllowUserToAddRows = false;
+            this.cashierMainForm_dataGrid.AllowUserToDeleteRows = false;
+            this.cashierMainForm_dataGrid.AllowUserToResizeColumns = false;
+            this.cashierMainForm_dataGrid.AllowUserToResizeRows = false;
             this.cashierMainForm_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cashierMainForm_dataGrid.Location = new System.Drawing.Point(675, 42);
             this.cashierMainForm_dataGrid.Name = "cashierMainForm_dataGrid";
             this.cashierMainForm_dataGrid.RowTemplate.Height = 28;
+            this.cashierMainForm_dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cashierMainForm_dataGrid.Size = new System.Drawing.Size(443, 549);
             this.cashierMainForm_dataGrid.TabIndex = 12;
             // 
@@ -200,6 +207,7 @@
             this.cashierMainForm_btn_exit.TabIndex = 15;
             this.cashierMainForm_btn_exit.Text = "Выход";
             this.cashierMainForm_btn_exit.UseVisualStyleBackColor = true;
+            this.cashierMainForm_btn_exit.Click += new System.EventHandler(this.cashierMainForm_btn_exit_Click);
             // 
             // cashierMainForm_btn_deleteRow
             // 
@@ -209,6 +217,7 @@
             this.cashierMainForm_btn_deleteRow.TabIndex = 16;
             this.cashierMainForm_btn_deleteRow.Text = "Удалить позицию";
             this.cashierMainForm_btn_deleteRow.UseVisualStyleBackColor = true;
+            this.cashierMainForm_btn_deleteRow.Click += new System.EventHandler(this.cashierMainForm_btn_deleteRow_Click);
             // 
             // cashierMainForm_checkBox_print
             // 

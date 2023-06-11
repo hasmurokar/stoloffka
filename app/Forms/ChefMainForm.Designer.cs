@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChefMainForm));
             this.chefMainForm_btn_exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.chefMainForm_combobox_dish = new System.Windows.Forms.ComboBox();
@@ -73,6 +74,7 @@
             // 
             // chefMainForm_combobox_dish
             // 
+            this.chefMainForm_combobox_dish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(151)))));
             this.chefMainForm_combobox_dish.FormattingEnabled = true;
             this.chefMainForm_combobox_dish.Location = new System.Drawing.Point(12, 31);
             this.chefMainForm_combobox_dish.Name = "chefMainForm_combobox_dish";
@@ -253,6 +255,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Wheat;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(943, 623);
             this.Controls.Add(this.chefMainForm_checkBox_print);
             this.Controls.Add(this.chefMainForm_btn_viewDocs);

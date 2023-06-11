@@ -3,6 +3,8 @@ using app.Domain;
 using app.Models.Common;
 using app.Models.Common.Combobox;
 using app.Models.Common.DataGridView;
+using app.Models.Domain;
+using app.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,6 +21,7 @@ namespace app.Forms
     public partial class CashierMainForm : Form
     {
         private BindingList<BillItem> billList = new();
+        private decimal TotalPrice { get; set; }
         public AppDbContext db;
         public CashierMainForm()
         {
@@ -88,11 +91,67 @@ namespace app.Forms
                 totalPrice += item.Price * item.Count;
             }
             label_totalPrice.Text = $"Стоимость заказа:  {totalPrice}";
+            TotalPrice = totalPrice;
         }
 
         private void cashierMainForm_btn_setOrder_Click(object sender, EventArgs e)
         {
+            using var db = new AppDbContext();
+            var entity = new Order
+            {
+                TotalPrice = TotalPrice,
+                Date = DateTime.Now,
+                UserId = DataStore.CurrentUser.Id
+            };
 
+            var ids = billList.Select(x => x.Id);
+            var dishes = db.Dishes.Where(x => ids.Any(e => e == x.Id)).ToList();
+            var relations = dishes.ConvertAll(x => new DishOrder
+            {
+                OrderId = entity.Id,
+                DishId = x.Id,
+                CountDish = billList.First(d => d.Id == x.Id).Count
+            });
+            entity.DishOrders = relations;
+
+            db.Orders.Add(entity);
+            db.SaveChanges();
+
+            if (cashierMainForm_checkBox_print.Checked)
+            {
+                var orderService = new DocumentService();
+                try
+                {
+                    orderService.GenerateBillReport(entity.Id);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка при сохранении файла.");
+                    return;
+                }
+            }
+
+            cashierMainForm_dataGrid.DataSource = new BindingList<BillItem>();
+            MessageBox.Show("ГОТОВО!");
+        }
+
+        private void cashierMainForm_btn_deleteRow_Click(object sender, EventArgs e)
+        {
+            if (cashierMainForm_dataGrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = cashierMainForm_dataGrid.SelectedRows[0];
+                var dishId = Convert.ToInt32(selectedRow.Cells[0].Value);
+                var dish = billList.First(x => x.Id == dishId);
+                billList.Remove(dish);
+                ClearData();
+            }
+        }
+
+        private void cashierMainForm_btn_exit_Click(object sender, EventArgs e)
+        {
+            var loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
         }
     }
 }

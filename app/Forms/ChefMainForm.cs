@@ -20,7 +20,6 @@ namespace app.Forms
 
         private void ChefMainForm_Load(object sender, EventArgs e)
         {
-
             InitComboboxDishes();
             UpdateDihesTable();
             ClearSelectedDish();
