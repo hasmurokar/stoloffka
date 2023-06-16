@@ -41,15 +41,22 @@ namespace app.Forms
 
             if (kindId != 0)
             {
+                var exist = DataStore.DishForm.Ingredients.FirstOrDefault(x => x.Kind.Id == kindId);
+                if (exist != null)
+                    DataStore.DishForm.Ingredients.Remove(exist);
+
                 using var db = new AppDbContext();
                 var kind = db.IngredientKinds.FirstOrDefault(k => k.Id == kindId);
                 var ingredient = new Ingredient
                 {
                     Kind = kind,
-                    Weight = addIngredientForm_weight.Value
+                    Weight = addIngredientForm_weight.Value,
+                    KindId = kind.Id
                 };
                 DataStore.DishForm.Ingredients.Add(ingredient);
                 MessageBox.Show("Ингредиент добавлен");
+                addIngredientForm_list_ingredients.SelectedValue = "";
+                addIngredientForm_weight.Value = 0;
             }
             else
                 MessageBox.Show("Название ингредиента не выбрано");
@@ -81,6 +88,15 @@ namespace app.Forms
         private void addIngredientForm_btn_search_Click(object sender, EventArgs e)
         {
             addIngredientForm_list_ingredients_TextChanged(null, EventArgs.Empty);
+        }
+
+        private void addIngredientForm_list_ingredients_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char l = e.KeyChar;
+            if ((l < 'А' || l > 'я') && l != '\b' && l != ' ')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -80,6 +80,7 @@
             this.docsListForm_list_documents.Location = new System.Drawing.Point(10, 47);
             this.docsListForm_list_documents.Name = "docsListForm_list_documents";
             this.docsListForm_list_documents.ReadOnly = true;
+            this.docsListForm_list_documents.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.docsListForm_list_documents.RowTemplate.Height = 28;
             this.docsListForm_list_documents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.docsListForm_list_documents.Size = new System.Drawing.Size(751, 656);

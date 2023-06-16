@@ -1,13 +1,13 @@
 ﻿using app.Enums;
+using app.Models.Base;
 
 namespace app.Models.Domain
 {
     /// <summary>
     /// Блюдо
     /// </summary>
-    public class Dish
+    public class Dish : EntityBase
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public decimal Weight { get; set; }

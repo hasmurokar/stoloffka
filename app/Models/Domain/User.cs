@@ -1,11 +1,10 @@
 ﻿using app.Enums;
+using app.Models.Base;
 
 namespace app.Models.Domain
 {
-    public class User
+    public class User : EntityBase
     {
-        
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }

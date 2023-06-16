@@ -48,6 +48,7 @@
             this.dishListForm_list_dishes.Location = new System.Drawing.Point(12, 43);
             this.dishListForm_list_dishes.Name = "dishListForm_list_dishes";
             this.dishListForm_list_dishes.ReadOnly = true;
+            this.dishListForm_list_dishes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dishListForm_list_dishes.RowTemplate.Height = 28;
             this.dishListForm_list_dishes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dishListForm_list_dishes.Size = new System.Drawing.Size(751, 656);

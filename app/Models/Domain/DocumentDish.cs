@@ -1,8 +1,9 @@
-﻿namespace app.Models.Domain
+﻿using app.Models.Base;
+
+namespace app.Models.Domain
 {
-    public class DocumentDish
+    public class DocumentDish : EntityBase
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public int Count { get; set; }

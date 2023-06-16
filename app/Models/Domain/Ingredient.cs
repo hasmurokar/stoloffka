@@ -1,8 +1,9 @@
-﻿namespace app.Models.Domain
+﻿using app.Models.Base;
+
+namespace app.Models.Domain
 {
-    public class Ingredient
+    public class Ingredient : EntityBase
     {
-        public int Id { get; set; }
         public decimal Weight { get; set; }
 
         public IngredientKind Kind { get; set; }

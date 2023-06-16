@@ -193,6 +193,7 @@
             this.cashierMainForm_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cashierMainForm_dataGrid.Location = new System.Drawing.Point(675, 44);
             this.cashierMainForm_dataGrid.Name = "cashierMainForm_dataGrid";
+            this.cashierMainForm_dataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.cashierMainForm_dataGrid.RowTemplate.Height = 28;
             this.cashierMainForm_dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cashierMainForm_dataGrid.Size = new System.Drawing.Size(443, 578);

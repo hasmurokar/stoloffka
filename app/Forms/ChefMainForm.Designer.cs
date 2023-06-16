@@ -165,7 +165,9 @@
             this.chefMainForm_list_count.Location = new System.Drawing.Point(13, 235);
             this.chefMainForm_list_count.Name = "chefMainForm_list_count";
             this.chefMainForm_list_count.ReadOnly = true;
+            this.chefMainForm_list_count.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.chefMainForm_list_count.RowTemplate.Height = 28;
+            this.chefMainForm_list_count.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.chefMainForm_list_count.Size = new System.Drawing.Size(285, 376);
             this.chefMainForm_list_count.TabIndex = 14;
             // 

@@ -58,6 +58,7 @@
             this.addNewIngredientForm_input_name.Name = "addNewIngredientForm_input_name";
             this.addNewIngredientForm_input_name.Size = new System.Drawing.Size(291, 25);
             this.addNewIngredientForm_input_name.TabIndex = 2;
+            this.addNewIngredientForm_input_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addNewIngredientForm_input_name_KeyPress);
             // 
             // addNewIngredientForm_btn_add
             // 

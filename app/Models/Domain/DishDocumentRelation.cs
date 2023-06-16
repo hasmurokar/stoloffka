@@ -1,8 +1,9 @@
-﻿namespace app.Models.Domain
+﻿using app.Models.Base;
+
+namespace app.Models.Domain
 {
-    public class DishDocumentRelation
+    public class DishDocumentRelation : EntityBase
     {
-        public int Id { get; set; }
         public Dish Dish { get; set; }
         public int DishId { get; set; }
         public DocumentDish DocumentDish { get; set; }

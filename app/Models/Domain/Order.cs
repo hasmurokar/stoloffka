@@ -1,8 +1,9 @@
-﻿namespace app.Models.Domain
+﻿using app.Models.Base;
+
+namespace app.Models.Domain
 {
-    public class Order
+    public class Order : EntityBase
     {
-        public int Id { get; set; }
         public decimal TotalPrice { get; set; }
         public DateTime Date { get; set; }
         

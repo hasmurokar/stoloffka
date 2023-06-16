@@ -1,6 +1,9 @@
 ﻿using app.Data;
 using app.Domain;
 using app.Enums;
+using app.Models.Common.DataGridView;
+using app.Services;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 namespace app.Forms
@@ -25,14 +28,15 @@ namespace app.Forms
 
         private void UpdateTable()
         {
-            var data = db.Dishes.Select(e => new
+            var enity = db.Dishes.ToList();
+            var data = enity.ConvertAll(e => new DishListItem
             {
-                e.Id,
-                e.Name,
-                e.Price,
-                e.Weight,
-                e.Type
-            }).ToList();
+                Id = e.Id,
+                Name = e.Name,
+                Price = e.Price,
+                Weight = e.Weight,
+                Type = EnumHelper.GetEnumDisplayName(e.Type)
+            });
             dishListForm_list_dishes.DataSource = data;
         }
 
@@ -77,7 +81,7 @@ namespace app.Forms
                 var recordToDelete = db.Dishes.FirstOrDefault(r => r.Id == selectedId);
                 if (recordToDelete != null)
                 {
-                    db.Dishes.Remove(recordToDelete);
+                    recordToDelete.State = EnityStateEnum.Archived;
                     db.SaveChanges();
                     UpdateTable();
                 }
@@ -91,7 +95,10 @@ namespace app.Forms
             var value = dishListForm_list_dishes.SelectedRows[0];
             var id = Convert.ToInt32(value.Cells[0].Value);
             using var db = new AppDbContext();
-            DataStore.DishForm = db.Dishes.FirstOrDefault(x => x.Id == id);
+            DataStore.DishForm = db.Dishes
+                .Include(d => d.Ingredients)
+                .ThenInclude(i => i.Kind)
+                .First(x => x.Id == id);
             var addDishForm = new AddDishForm();
             addDishForm.Show();
             this.Close();

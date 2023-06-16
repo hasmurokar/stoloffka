@@ -114,6 +114,7 @@
             this.addIngredientForm_list_ingredients.Name = "addIngredientForm_list_ingredients";
             this.addIngredientForm_list_ingredients.Size = new System.Drawing.Size(200, 29);
             this.addIngredientForm_list_ingredients.TabIndex = 8;
+            this.addIngredientForm_list_ingredients.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addIngredientForm_list_ingredients_KeyPress);
             // 
             // addIngredientForm_btn_search
             // 

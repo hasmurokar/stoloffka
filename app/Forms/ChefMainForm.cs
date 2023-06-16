@@ -20,14 +20,32 @@ namespace app.Forms
 
         private void ChefMainForm_Load(object sender, EventArgs e)
         {
+            
             InitComboboxDishes();
-            UpdateDihesTable();
+            UpdateDishesTable();
             ClearSelectedDish();
+            chefMainForm_list_count.DataSource = new BindingList<NameWeightType>();
+            chefMainForm_list_count.Columns[0].HeaderText = "Название";
+            chefMainForm_list_count.Columns[1].HeaderText = "Ингредиенты";
+            cfehMainForm_btn_addToDoc.Enabled = false;
+            chefMainForm_btn_clearListDoc.Enabled = false;
+            chefMainForm_btn_saveDoc.Enabled = false;
+            foreach (DataGridViewColumn column in chefMainForm_list_count.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            foreach (DataGridViewColumn column in chefMainForm_list_document.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
         }
 
-        private void UpdateDihesTable()
+        private void UpdateDishesTable()
         {
             chefMainForm_list_document.DataSource = listDishes;
+            chefMainForm_list_document.Columns[1].HeaderText = "Название";
+            chefMainForm_list_document.Columns[2].HeaderText = "Количество";
+            chefMainForm_list_document.Columns[3].HeaderText = "Цена";
         }
 
         private void InitComboboxDishes()
@@ -45,6 +63,7 @@ namespace app.Forms
         private void chefMainForm_btn_count_Click(object sender, EventArgs e)
         {
             AddIngredientsToTable();
+            cfehMainForm_btn_addToDoc.Enabled = true;
         }
 
         private void AddIngredientsToTable()
@@ -76,11 +95,9 @@ namespace app.Forms
                 .FirstOrDefault(d => d.Id == dishId);
             var count = Convert.ToDecimal(chefMainForm_portionCount.Value);
 
-            if (cfehMainForm_btn_addToDoc.Text.Contains("Редактировать"))
-            {
-                var exist = listDishes.First(x => x.Id == dishId);
+            var exist = listDishes.FirstOrDefault(x => x.Id == dishId);
+            if (exist != null)
                 listDishes.Remove(exist);
-            }
 
             listDishes.Add(new DocumentDishItem
             {
@@ -89,7 +106,10 @@ namespace app.Forms
                 Count = Convert.ToInt32(count),
                 TotalPrice = dish.Price * count,
             });
-
+            chefMainForm_btn_clearListDoc.Enabled = true;
+            chefMainForm_btn_saveDoc.Enabled = true;
+            cfehMainForm_btn_addToDoc.Enabled = false;
+            chefMainForm_combobox_dish.Enabled = true;
             chefMainForm_list_document.DataSource = listDishes;
             ClearSelectedDish();
         }
@@ -143,6 +163,9 @@ namespace app.Forms
 
             chefMainForm_list_document.DataSource = new BindingList<DocumentDishItem>();
             MessageBox.Show("ГОТОВО!");
+            cfehMainForm_btn_addToDoc.Enabled = false;
+            chefMainForm_btn_clearListDoc.Enabled = false;
+            chefMainForm_btn_saveDoc.Enabled = false;
         }
 
         
@@ -159,6 +182,7 @@ namespace app.Forms
                 AddIngredientsToTable();
                 cfehMainForm_btn_addToDoc.Text = "Редактировать";
                 chefMainForm_combobox_dish.Enabled = false;
+                cfehMainForm_btn_addToDoc.Enabled = true;
             }
         }
 

@@ -3,6 +3,7 @@ using app.Domain;
 using app.Enums;
 using app.Models.Common.Combobox;
 using app.Models.Domain;
+using app.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace app.Forms
@@ -63,7 +64,14 @@ namespace app.Forms
         }
         private void InitComboboxRole()
         {
-            adminMainForm_list_role.DataSource = Enum.GetValues(typeof(EnumRole));
+            var enumValues = Enum.GetValues(typeof(EnumRole)).Cast<EnumRole>();
+            adminMainForm_list_role.DataSource = enumValues.Select(x => new
+            {
+                Value = x,
+                DisplayName = EnumHelper.GetEnumDisplayName(x)
+            }).ToList();
+            adminMainForm_list_role.DisplayMember = "DisplayName";
+            adminMainForm_list_role.ValueMember = "Value";
             adminMainForm_list_role.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
@@ -103,11 +111,13 @@ namespace app.Forms
             {
                 using var db = new AppDbContext();
                 var user = db.Users.FirstOrDefault(u => u.Id == userId);
-                db.Users.Remove(user);
+                user.State = EnityStateEnum.Archived;
                 db.SaveChanges();
             }
 
             adminMainForm_btn_delete.Text = "Удалить";
+            MessageBox.Show("Пользователь удален");
+            InitComboboxUsers();
             ButtonsEnable(true);
         }
 

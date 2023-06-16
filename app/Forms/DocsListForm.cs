@@ -42,9 +42,9 @@ namespace app.Forms
         private void docsListForm_btn_back_Click(object sender, EventArgs e)
         {
 
-            var cashierMainForm = new CashierMainForm();
+            var chefMainForm = new ChefMainForm();
             this.Close();
-            cashierMainForm.Show();
+            chefMainForm.Show();
         }
 
         private void docsListForm_btn_delete_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace app.Forms
                 var recordToDelete = db.Documents.FirstOrDefault(r => r.Id == selectedId);
                 if (recordToDelete != null)
                 {
-                    db.Documents.Remove(recordToDelete);
+                    recordToDelete.State = EnityStateEnum.Archived;
                     db.SaveChanges();
                     UpdateTable();
                 }

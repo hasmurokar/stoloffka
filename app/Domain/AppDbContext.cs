@@ -1,5 +1,9 @@
-﻿using app.Models.Domain;
+﻿using app.Enums;
+using app.Models.Base;
+using app.Models.Domain;
 using Microsoft.EntityFrameworkCore;
+using Z.EntityFramework.Plus;
+
 
 namespace app.Domain
 {
@@ -17,6 +21,7 @@ namespace app.Domain
         public DbSet<DishDocumentRelation> DishDocumentRelations { get; set; }
         public AppDbContext() : base()
         {
+            this.Filter<EntityBase>(q => q.Where(eb => eb.State == EnityStateEnum.Actual));
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -25,6 +30,7 @@ namespace app.Domain
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            EntityBase_Builder(modelBuilder);
             modelBuilder.Entity<DishOrder>()
                 .HasOne(d => d.Order)
                 .WithMany(o => o.DishOrders)
@@ -37,6 +43,21 @@ namespace app.Domain
                 .HasForeignKey(d => d.DishId)
                 .OnDelete(DeleteBehavior.Restrict);
             onModelCreatingEnums(modelBuilder);
+        }
+
+        private static void EntityBase_Builder(ModelBuilder modelBuilder)
+        {
+            var types = modelBuilder.Model.GetEntityTypes()
+                        .Where(t => t.ClrType.IsAssignableTo(typeof(EntityBase)));
+
+            foreach (var et in types)
+            {
+                var stateProperty = et.FindProperty("State");
+                if (stateProperty != null)
+                {
+                    stateProperty.SetDefaultValueSql("0");
+                }
+            }
         }
 
         private static void onModelCreatingEnums(ModelBuilder modelBuilder)

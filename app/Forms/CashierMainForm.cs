@@ -27,17 +27,25 @@ namespace app.Forms
         {
             InitializeComponent();
             InitComboboxDishes();
+            cashierMainForm_btn_setOrder.Enabled = false;
+            cashierMainForm_btn_deleteRow.Enabled = false;
         }
         private void CashierMainForm_Load(object sender, EventArgs e)
         {
             using var db = new AppDbContext();
+            ChecksCounter(db);
+            label_fio.Text = DataStore.CurrentUser.Name;
+        }
+
+        private void ChecksCounter(AppDbContext db)
+        {
             var orderId = db.Orders.Count();
             if (orderId > 0)
                 orderId = db.Orders.Max(x => x.Id);
             var nextOrderId = orderId + 1;
-            label_order.Text += nextOrderId.ToString();
-            label_fio.Text = DataStore.CurrentUser.Name;
+            label_order.Text = $"№ Заказа: {nextOrderId.ToString()}";
         }
+
         private void InitComboboxDishes()
         {
             using var db = new AppDbContext();
@@ -52,6 +60,11 @@ namespace app.Forms
         private void cashierMainForm_btn_addDish_Click(object sender, EventArgs e)
         {
             var dishId = (int)cashierMainForm_list_dish.SelectedValue;
+            if (dishId == 0)
+            {
+                MessageBox.Show("Блюдо не выбрано");
+                return;
+            }
             using var db = new AppDbContext();
             var data = db.Dishes.FirstOrDefault(d => d.Id == dishId);
             var count = Convert.ToInt32(cashierMainForm_dishCount.Value);
@@ -68,6 +81,8 @@ namespace app.Forms
                 Count = count
             };
             billList.Add(item);
+            cashierMainForm_btn_setOrder.Enabled = true;
+            cashierMainForm_btn_deleteRow.Enabled = true;
             UpdateDataGridView();
             ClearData();
         }
@@ -75,6 +90,7 @@ namespace app.Forms
         private void UpdateDataGridView()
         {
             cashierMainForm_dataGrid.DataSource = billList;
+            DataGridView_ChangeColumnName();
             UpdateTotalPrice();
         }
 
@@ -130,7 +146,7 @@ namespace app.Forms
                     return;
                 }
             }
-
+            ChecksCounter(db);
             cashierMainForm_dataGrid.DataSource = new BindingList<BillItem>();
             MessageBox.Show("ГОТОВО!");
         }
@@ -145,6 +161,11 @@ namespace app.Forms
                 billList.Remove(dish);
                 ClearData();
             }
+            if (cashierMainForm_dataGrid.RowCount < 1)
+            {
+                cashierMainForm_btn_setOrder.Enabled = false;
+                cashierMainForm_btn_deleteRow.Enabled = false;
+            }
         }
 
         private void cashierMainForm_btn_exit_Click(object sender, EventArgs e)
@@ -152,6 +173,12 @@ namespace app.Forms
             var loginForm = new LoginForm();
             loginForm.Show();
             this.Close();
+        }
+        private void DataGridView_ChangeColumnName()
+        {
+            cashierMainForm_dataGrid.Columns[1].HeaderText = "Название";
+            cashierMainForm_dataGrid.Columns[2].HeaderText = "Цена";
+            cashierMainForm_dataGrid.Columns[3].HeaderText = "Количество";
         }
     }
 }
